@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="dollar-symbol.png">
+
+    <title>Admin Submission | How much would you pay?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" ></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+  </head>
+
+  <body>
+      <h1 class="mt-4 text-center">How much would you pay?</h1>
+      <h5 class="desc mt-2 mb-2 text-center">Admin Submission</h5>
+      <div class="mb-4 text-center project"><small>A project by Peter DeNatale and Nigel Silva.</small></div>
+      
+        <div class="container"><!-- Start Container -->
+                
+                <div class="row d-flex justify-content-around container-cards"><!-- Start Row -->
+                  
+                  <div class="my-2 col-md-5 card text-left">
+                    <div class="card-body">
+                     <h5 class="card-title mb-2">{{title}}</h5>
+                     <p class="card-text">{{description}}</p>
+                      <div class="bottom">
+                        <div class="row">
+                          <form class="w-100" action="https://docs.google.com/forms/u/4/d/e/1FAIpQLSdkzQzrkfmBrKR2v0FaN2LVQud1tB5CkltIQgVKZkBU3o6GFQ/formResponse" target="secret-frame" method="POST">
+                            <input type="hidden" name="fvv" value="1">
+                            <input type="hidden" name="draftResponse" value="[null,null,&quot;-8600880916397619772&quot;]">
+                            <input type="hidden" name="pageHistory" value="0">
+                            <input type="hidden" name="fbzx" value="-8600880916397619772">
+                            <input style="display: none!important;" name="entry.1492956734" dir="auto" aria-label="Item" value="Vintage Apple Macintosh">
+                            <div class="col-12">
+                              <input class="dollar-amt text-center form-control" name="entry.1438722943" dir="auto" aria-label="Price" placeholder="Type an amount.">
+                            </div>
+                            <div class="col-12">
+                              <button class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="text-center credit mt-2">Submitted by Anonymous</div>
+                      </div>
+                </div>
+              </div>
+
+              <div class="my-2 col-md-5 card text-left preview">
+                  <div class="card-body">
+                   <form action="#">
+                    <div class="form-group">
+                        <label for="title">Item Title</label>
+                        <input class="form-control submission-field" name="title" ng-model="title">
+                   </div>
+                   <div class="form-group">
+                        <label for="description">Item Description</label>
+                        <input class="form-control submission-field" name="description" ng-model="description">
+                   </div>
+                   <button class="mt-1 text-center form-control btn post-btn">Post Item</button>
+                   </form>
+                   </div>
+              </div>
+                  
+            </div><!-- End Row -->
+        </div><!-- End Container -->
+
+        <iframe name="secret-frame" width="0" height="0" border="0" style="display: none;"></iframe>
+
+        <!-- Script to redirect to a custom page -->
+        <script>
+        // replace "ss-submit" with the ID of your submit button
+        $(".submit-btn").addEventListener("click", function(){
+          // adds a delay because the results page loads before the form has a chance to submit
+          setTimeout(function() {
+            // replace the url in quotes below to where you want to the user to be redirected to
+            window.location = "http://www.google.com";
+          }, 1000);
+        });
+        </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/2.0.13/autoNumeric.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+    <script>
+        $( document ).ready( function() {
+            $(".dollar-amt").autoNumeric(
+                'init', {digitGroupSeparator: ',', decimalPlacesOverride: '0'}
+            );
+        });
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
