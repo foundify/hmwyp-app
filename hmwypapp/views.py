@@ -8,6 +8,7 @@ def home(request):
 		form = VintageMacForm(request.POST)
 		if form.is_valid():
 			form.save()
+			return http.HttpResponseRedirect('')
 	else:
 		form = VintageMacForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
@@ -17,6 +18,7 @@ def nike(request):
 		form = NikeForm(request.POST)
 		if form.is_valid():
 			form.save()
+			return http.HttpResponseRedirect('')
 	else:
 		form = NikeForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})

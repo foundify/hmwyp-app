@@ -30,6 +30,7 @@ h5 {
   color: #507c36;
   background: #e3efdc;
   text-align: center;
+  padding: 6px !important;
 }
 .form-control:focus {
   outline: none !important;
