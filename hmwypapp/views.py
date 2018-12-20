@@ -8,7 +8,7 @@ def home(request):
 		form = VintageMacForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return http.HttpResponseRedirect('')
+			form = VintageMacForm()
 	else:
 		form = VintageMacForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
@@ -18,7 +18,7 @@ def nike(request):
 		form = NikeForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return http.HttpResponseRedirect('')
+			form = NikeForm()
 	else:
 		form = NikeForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
@@ -28,6 +28,7 @@ def parking(request):
 		form = ParkingForm(request.POST)
 		if form.is_valid():
 			form.save()
+			form = ParkingForm()
 	else:
 		form = ParkingForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
@@ -37,6 +38,7 @@ def milk(request):
 		form = MilkForm(request.POST)
 		if form.is_valid():
 			form.save()
+			form = MilkForm()
 	else:
 		form = MilkForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
@@ -46,6 +48,7 @@ def money(request):
 		form = MoneyForm(request.POST)
 		if form.is_valid():
 			form.save()
+			form = MoneyForm()
 	else:
 		form = MoneyForm()
 	return render(request, 'hmwypapp/index.html', {'form': form})
