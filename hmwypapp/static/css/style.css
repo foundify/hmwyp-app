@@ -24,6 +24,14 @@ h5 {
   border: none;
   box-shadow: 5px 5px 0px 0px #eeeeee;
 }
+.form-control {
+  padding: 5px !important;
+  line-height: 1 !important;
+}
+.btn {
+  padding: 2px !important;
+  line-height: 2 !important;
+}
 .form-control, .form-control:focus, .form-control::placeholder, .input-group-text {
   font-family: 'Courier', monospace;
   border: 0 !important;
