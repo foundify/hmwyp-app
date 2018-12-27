@@ -5,13 +5,11 @@ from .forms import VintageMacForm, NikeForm, ParkingForm, MilkForm, MoneyForm
 # Create your views here.
 def home(request):
 	if request.method == "POST":
-		form = VintageMacForm(request.POST)
-		if form.is_valid():
-			form.save()
-			form = VintageMacForm()
-	else:
-		form = VintageMacForm()
-	return render(request, 'hmwypapp/index.html', {'form': form})
+		amount = VintageMacForm(request.POST)['amount']
+		VintageMac.objects.create(
+				amount = amount,
+			)
+	return HttpReponse('')
 
 def nike(request):
 	if request.method == "POST":
