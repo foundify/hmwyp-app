@@ -1,15 +1,14 @@
-        var frm = $('#form1');
-        frm.submit(function () {
+        function myFunction1() {
             $.ajax({
-                type: frm.attr('method'),
-                url: frm.attr('action'),
-                data: frm.serialize(),
+                type: "post",
+                cache: "false",
+                url: "",
                 complete: function(success){
                     $('#submission1').fadeOut(500);
                     $('#results1').delay(500).fadeIn(500);
                 }
-            });
-        });
+            })
+        }
         function myFunction2() {
             $.ajax({
                 type: "post",
