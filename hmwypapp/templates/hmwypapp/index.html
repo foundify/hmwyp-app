@@ -55,7 +55,7 @@
                         <p class="card-text">Some quick example text to build on the card title.</p>
                         <div class="bottom">
                           <div class="row">
-                            <form class="w-100" action="" method="POST">
+                            <form id="form1" class="w-100" action="" method="POST">
                               <div class="col-12">
                                 {% csrf_token %}
                                   {% for hidden_field in form.hidden_fields %}
@@ -71,7 +71,7 @@
                                 {% endfor %}
                               </div>
                               <div class="col-12">
-                                <button onclick="myFunction1()" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
+                                <button class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
                               </div>
                             </form>
                           <div class="text-center credit mt-2 w-100">Submitted by @peterdenatale</div>
