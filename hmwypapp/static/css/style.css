@@ -254,7 +254,7 @@ button span {
 /* Progress Bar */
 .progress {
   position:relative;
-  height:65px;
+  height:54px;
   box-shadow: none !important;
   background: #e3efdc;
   border-radius: 5px;
