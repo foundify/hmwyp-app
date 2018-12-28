@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from .models import VintageMac, Nike, Parking, Milk, Money
 from .forms import VintageMacForm, NikeForm, ParkingForm, MilkForm, MoneyForm
+from django.db.models import Avg, Max, Min
+
 
 # Create your views here.
 def home(request):
+	price_avg = VintageMac.objects.all().aggregate(Avg('price'))
+	price_max = VintageMac.objects.all().aggregate(Max('price'))
+	price_min = VintageMac.objects.all().aggregate(Min('price'))
 	if request.method == "POST":
 		form = VintageMacForm(request.POST)
 		if form.is_valid():

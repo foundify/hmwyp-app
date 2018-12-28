@@ -1,9 +1,9 @@
         function myFunction1() {
             $.ajax({
-                type: "post",
-                cache: "false",
+                type: 'post',
+                cache: 'false',
                 url: "",
-                complete: function(success){
+                success: function(success){
                     $('#submission1').fadeOut(500);
                     $('#results1').delay(500).fadeIn(500);
                 }
