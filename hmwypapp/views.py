@@ -2,13 +2,18 @@ from django.shortcuts import render
 from .models import VintageMac, Nike, Parking, Milk, Money
 from .forms import VintageMacForm, NikeForm, ParkingForm, MilkForm, MoneyForm
 from django.db.models import Avg, Max, Min
+from django.db.models import F, Func
 
 
 # Create your views here.
+class Round(Func):
+	function = 'ROUND'
+	template='%(function)s(%(expressions)s, 2)'
+
 def home(request):
-	price_avg = VintageMac.objects.all().aggregate(Avg('price'))
-	price_max = VintageMac.objects.all().aggregate(Max('price'))
-	price_min = VintageMac.objects.all().aggregate(Min('price'))
+	price_avg = VintageMac.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average')
+	price_max = VintageMac.objects.all().aggregate(Max('price')).get('price__max', 0)
+	price_min = VintageMac.objects.all().aggregate(Min('price')).get('price__min', 0)
 	if request.method == "POST":
 		form = VintageMacForm(request.POST)
 		if form.is_valid():
