@@ -48,8 +48,8 @@
                   <div class="my-2 col-md-5 card text-left post">
                       <div class="card-body">
                        <h5 class="card-title mb-1">Vintage Apple Macintosh</h5>
-                       <div id="submission1">
-                        <p class="card-text mb-3">Some quick example text to build on the card title.</p>
+                       <div id="submission1" class="mb-2">
+                        <p class="card-text mb-4">Some quick example text to build on the card title.</p>
                         <div class="bottom">
                           <div class="row">
                             <form action="" class="w-100" method="POST" >
@@ -71,10 +71,9 @@
                                   <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
                               </div>
                             </form>
-                            <div class="text-center mt-2 mb-2 credit w-100">Submitted by @peterdenatale</div>
                           </div>
                         </div></div>
-                        <div id="results1" class="mb-2">
+                        <div id="results1">
                           <p class="card-text">You said that you would pay <span class="value">$375.00</span> .</p>
                           <div class="bottom">
                               <div class="row">
@@ -93,7 +92,7 @@
                                 </div>
                           </div>
                         </div>
-                        <div class="text-center w-100">
+                        <div class="text-center mt-2 mb-2 w-100">
                           <button onclick="myFunction1()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
                         </div>
                   </div>
@@ -103,8 +102,8 @@
                 <div class="my-2 col-md-5 card text-left post">
                     <div class="card-body">
                      <h5 class="card-title mb-1">Nike Air MAG</h5>
-                     <div id="submission2">
-                      <p class="card-text mb-3">Some quick example text to build on the card title.</p>
+                     <div id="submission2" class="mb-2">
+                      <p class="card-text mb-4">Some quick example text to build on the card title.</p>
                       <div class="bottom">
                         <div class="row">
                           <form action="nike" class="w-100" method="POST" >
@@ -126,10 +125,9 @@
                                 <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
                             </div>
                           </form>
-                          <div class="text-center mt-2 mb-2 credit w-100">Submitted by @peterdenatale</div>
                         </div>
                       </div></div>
-                      <div id="results2" class="mb-2">
+                      <div id="results2">
                         <p class="card-text">You said that you would pay <span class="value">$375.00</span> .</p>
                         <div class="bottom">
                             <div class="row">
@@ -148,7 +146,7 @@
                               </div>
                         </div>
                       </div>
-                      <div class="text-center w-100">
+                      <div class="text-center mt-2 mb-2 w-100">
                         <button onclick="myFunction2()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
                       </div>
                 </div>
@@ -167,34 +165,33 @@
                   
                 <div class="my-2 col-md-5 card text-left post">
                     <div class="card-body">
-                     <h5 class="card-title mb-2">Parking Spot in Manhattan</h5>
-                     <div id="submission3">
-                      <p class="card-text">Some quick example text to build on the card title.</p>
+                     <h5 class="card-title mb-1">Parking Spot in Manhattan</h5>
+                     <div id="submission3" class="mb-2">
+                      <p class="card-text mb-4">Some quick example text to build on the card title.</p>
                       <div class="bottom">
                         <div class="row">
-                            <form class="w-100" action="parking" method="POST">
-                              <div class="col-12">
-                                {% csrf_token %}
-                                  {% for hidden_field in form.hidden_fields %}
-                                    {{ hidden_field }}
-                                  {% endfor %}
-                                {% for field in form.visible_fields %}
-                                  <div class="form-control">
-                                      {% render_field field min="0" class="form-control" placeholder="Type an amount." %}
-                                      {% if field.help_text %}
-                                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                                    {% endif %}
-                                  </div>
+                          <form action="parking" class="w-100" method="POST" >
+                            <div class="col-12">
+                              {% csrf_token %}
+                                {% for hidden_field in form.hidden_fields %}
+                                  {{ hidden_field }}
                                 {% endfor %}
-                              </div>
-                              <div class="col-12">
+                              {% for field in form.visible_fields %}
+                                <div class="form-control">
+                                    {% render_field field min="0" class="form-control" id="amount1" placeholder="Type an amount." %}
+                                    {% if field.help_text %}
+                                  <small class="form-text text-muted">{{ field.help_text }}</small>
+                                  {% endif %}
+                                </div>
+                              {% endfor %}
+                            </div>
+                            <div class="col-12">
                                 <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
-                              </div>
-                            </form>
-                        <div class="text-center credit mt-2 mb-2 w-100">Submitted by @peterdenatale</div>
+                            </div>
+                          </form>
                         </div>
                       </div></div>
-                      <div id="results3" class="mb-2">
+                      <div id="results3">
                         <p class="card-text">You said that you would pay <span class="value">$375.00</span> .</p>
                         <div class="bottom">
                             <div class="row">
@@ -213,42 +210,41 @@
                               </div>
                         </div>
                       </div>
-                      <div class="text-center w-100">
-                          <button onclick="myFunction3()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
+                      <div class="text-center mt-2 mb-2 w-100">
+                        <button onclick="myFunction3()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
                       </div>
                 </div>
               </div>
                   
               <div class="my-2 col-md-5 card text-left post">
                   <div class="card-body">
-                   <h5 class="card-title mb-2">Gallon of Spoiled Milk</h5>
-                   <div id="submission4">
-                    <p class="card-text">Some quick example text to build on the card title.</p>
+                   <h5 class="card-title mb-1">Gallon of Spoiled Milk</h5>
+                   <div id="submission4" class="mb-2">
+                    <p class="card-text mb-4">Some quick example text to build on the card title.</p>
                     <div class="bottom">
                       <div class="row">
-                              <form class="w-100" action="milk" method="POST">
-                                <div class="col-12">
-                                  {% csrf_token %}
-                                    {% for hidden_field in form.hidden_fields %}
-                                      {{ hidden_field }}
-                                    {% endfor %}
-                                  {% for field in form.visible_fields %}
-                                    <div class="form-control">
-                                        {% render_field field min="0" class="form-control" placeholder="Type an amount." %}
-                                        {% if field.help_text %}
-                                      <small class="form-text text-muted">{{ field.help_text }}</small>
-                                      {% endif %}
-                                    </div>
-                                  {% endfor %}
-                                </div>
-                                <div class="col-12">
-                                  <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
-                                </div>
-                              </form>
-                      <div class="text-center credit mt-2 mb-2 w-100">Submitted by @peterdenatale</div>
+                        <form action="milk" class="w-100" method="POST" >
+                          <div class="col-12">
+                            {% csrf_token %}
+                              {% for hidden_field in form.hidden_fields %}
+                                {{ hidden_field }}
+                              {% endfor %}
+                            {% for field in form.visible_fields %}
+                              <div class="form-control">
+                                  {% render_field field min="0" class="form-control" id="amount1" placeholder="Type an amount." %}
+                                  {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                              </div>
+                            {% endfor %}
+                          </div>
+                          <div class="col-12">
+                              <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
+                          </div>
+                        </form>
                       </div>
                     </div></div>
-                    <div id="results4" class="mb-2">
+                    <div id="results4">
                       <p class="card-text">You said that you would pay <span class="value">$375.00</span> .</p>
                       <div class="bottom">
                           <div class="row">
@@ -267,42 +263,41 @@
                             </div>
                       </div>
                     </div>
-                    <div class="text-center w-100">
-                        <button onclick="myFunction4()" class="text-center badge badge-primary" style="cursor:pointer; color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
-                      </div>
+                    <div class="text-center mt-2 mb-2 w-100">
+                      <button onclick="myFunction4()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
+                    </div>
               </div>
             </div>
 
             <div class="my-2 col-md-5 card text-left post">
                 <div class="card-body">
-                 <h5 class="card-title mb-2">Ripped $100 Bill</h5>
-                 <div id="submission5">
-                  <p class="card-text">Some quick example text to build on the card title.</p>
+                 <h5 class="card-title mb-1">Ripped $100 Bill</h5>
+                 <div id="submission5" class="mb-2">
+                  <p class="card-text mb-4">Some quick example text to build on the card title.</p>
                   <div class="bottom">
                     <div class="row">
-                            <form class="w-100" action="money" method="POST">
-                              <div class="col-12">
-                                {% csrf_token %}
-                                  {% for hidden_field in form.hidden_fields %}
-                                    {{ hidden_field }}
-                                  {% endfor %}
-                                {% for field in form.visible_fields %}
-                                  <div class="form-control">
-                                      {% render_field field min="0" class="form-control" placeholder="Type an amount." %}
-                                      {% if field.help_text %}
-                                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                                    {% endif %}
-                                  </div>
-                                {% endfor %}
-                              </div>
-                              <div class="col-12">
-                                <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
-                              </div>
-                            </form>
-                    <div class="text-center credit mt-2 mb-2 w-100">Submitted by @peterdenatale</div>
+                      <form action="money" class="w-100" method="POST" >
+                        <div class="col-12">
+                          {% csrf_token %}
+                            {% for hidden_field in form.hidden_fields %}
+                              {{ hidden_field }}
+                            {% endfor %}
+                          {% for field in form.visible_fields %}
+                            <div class="form-control">
+                                {% render_field field min="0" class="form-control" id="amount1" placeholder="Type an amount." %}
+                                {% if field.help_text %}
+                              <small class="form-text text-muted">{{ field.help_text }}</small>
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="mt-1 text-center form-control btn submit-btn">Submit <span>🤑</span></button>
+                        </div>
+                      </form>
                     </div>
                   </div></div>
-                  <div id="results5" class="mb-2">
+                  <div id="results5">
                     <p class="card-text">You said that you would pay <span class="value">$375.00</span> .</p>
                     <div class="bottom">
                         <div class="row">
@@ -321,9 +316,9 @@
                           </div>
                     </div>
                   </div>
-                  <div class="text-center w-100">
-                      <button onclick="myFunction5()" class="text-center badge badge-primary" style="cursor:pointer; color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
-                    </div>
+                  <div class="text-center mt-2 mb-2 w-100">
+                    <button onclick="myFunction5()" class="text-center badge badge-primary" style="cursor:pointer;color:#507c36 !important;background: #e3efdc !important;">Toggle Results</button>
+                  </div>
             </div>
           </div>
 
