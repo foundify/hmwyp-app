@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
@@ -54,7 +54,7 @@
                         <p class="card-text">Some quick example text to build on the card title.</p>
                         <div class="bottom">
                           <div class="row">
-                            <form action="/VintageMac/" class="w-100" method="POST" id="form1">
+                            <form action="" class="w-100" method="POST" id="form1">
                               <div class="col-12">
                                 {% csrf_token %}
                                   {% for hidden_field in form.hidden_fields %}
@@ -334,38 +334,19 @@
             </div>
         </div><!-- End Container -->
 
-        <iframe name="secret-frame" width="0" height="0" border="0" style="display: none;"></iframe>
-
-        <!-- Script to redirect to a custom page -->
-        <script>
-        // replace "ss-submit" with the ID of your submit button
-        $(".submit-btn").addEventListener("click", function(){
-          // adds a delay because the results page loads before the form has a chance to submit
-          setTimeout(function() {
-            // replace the url in quotes below to where you want to the user to be redirected to
-            window.location = "http://www.google.com";
-          }, 1000);
-        });
-        </script>
-
-    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/results.js' %}"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.10.0/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.10.0/feather.min.js"></script>    
     <script>
-        feather.replace()
-    </script>
-    <script>
-        $( document ).ready( function() {
-            $(".dollar-amt").autoNumeric(
-                'init', {digitGroupSeparator: ',', decimalPlacesOverride: '0'}
-            );
-        });
+        feather.replace();
     </script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
