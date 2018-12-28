@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'hmwyp.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'hmwyp_database',
-       'USER': 'hmwyp',
-       'PASSWORD': 'hmwyp_db',
-       'HOST': 'localhost',
+       'NAME': 'd24h1qld9e3ca2',
+       'USER': 'ynwnjxhknyorsg',
+       'PASSWORD': 'c01ffa19bc69bdf407bfff8b71d9ef0329c4548d6dc31fa565e8d114cc9c29b5',
+       'HOST': 'ec2-54-235-247-209.compute-1.amazonaws.com',
        'PORT': '5432',
    }
  }
