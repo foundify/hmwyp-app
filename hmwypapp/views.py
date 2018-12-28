@@ -16,7 +16,7 @@ def home(request):
 			form = VintageMacForm()
 	else:
 		form = VintageMacForm()
-	return render(request, 'hmwypapp/index.html', {'form': form})
+	return render(request, 'hmwypapp/index.html', {'form': form, 'price_min': price_min, 'price_max': price_max, 'price_avg': price_avg})
 
 def nike(request):
 	if request.method == "POST":
