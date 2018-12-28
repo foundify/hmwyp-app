@@ -11,9 +11,9 @@ class Round(Func):
 	template='%(function)s(%(expressions)s, 2)'
 
 def home(request):
-	price_avg = VintageMac.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average')
-	price_max = VintageMac.objects.all().aggregate(Max('price')).get('price__max', 0)
-	price_min = VintageMac.objects.all().aggregate(Min('price')).get('price__min', 0)
+	price_avg = VintageMac.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average Yet!')
+	price_max = VintageMac.objects.all().aggregate(Max('price')).get('price__max', 'No Data Yet!')
+	price_min = VintageMac.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
 		form = VintageMacForm(request.POST)
 		if form.is_valid():
