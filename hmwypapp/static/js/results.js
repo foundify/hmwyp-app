@@ -1,55 +1,20 @@
-        function myFunction1() {
-            $.ajax({
-                type: 'post',
-                cache: 'false',
-                url: "",
-                success: function(success){
-                    $('#submission1').fadeOut(500);
-                    $('#results1').delay(500).fadeIn(500);
-                }
-            })
-        }
-        function myFunction2() {
-            $.ajax({
-                type: "post",
-                cache: "false",
-                url: "",
-                complete: function(success){
-                    $('#submission2').fadeOut(500);
-                    $('#results2').delay(500).fadeIn(500);
-                }
-            })
-        }
-        function myFunction3() {
-            $.ajax({
-                type: "post",
-                cache: "false",
-                url: "",
-                complete: function(success){
-                    $('#submission3').fadeOut(500);
-                    $('#results3').delay(500).fadeIn(500);
-                }
-            })
-        }
-        function myFunction4() {
-            $.ajax({
-                type: "post",
-                cache: "false",
-                url: "",
-                complete: function(success){
-                    $('#submission4').fadeOut(500);
-                    $('#results4').delay(500).fadeIn(500);
-                }
-            })
-        }
-        function myFunction5() {
-            $.ajax({
-                type: "post",
-                cache: "false",
-                url: "",
-                complete: function(success){
-                    $('#submission5').fadeOut(500);
-                    $('#results5').delay(500).fadeIn(500);
-                }
-            })
-        }
+function myFunction1() {
+    $('#submission1').fadeToggle(0);
+    $('#results1').fadeToggle(0);
+}
+function myFunction2() {
+    $('#submission2').fadeToggle(0);
+    $('#results2').fadeToggle(0);
+}
+function myFunction3() {
+    $('#submission3').fadeToggle(0);
+    $('#results3').fadeToggle(0);
+}
+function myFunction4() {
+    $('#submission4').fadeToggle(0);
+    $('#results4').fadeToggle(0);
+}
+function myFunction5() {
+    $('#submission5').fadeToggle(0);
+    $('#results5').fadeToggle(0);
+}

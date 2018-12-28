@@ -234,7 +234,7 @@ button span {
 }
 .badge-light {
   color: #bfbfbf;
-  background: #e6e6e6;
+  background: #e3efdc !important;
 }
 
 .badge-primary{
@@ -247,7 +247,7 @@ button span {
 
 .badge-primary:hover,.badge-primary:focus{
   text-decoration:none !important;
-  color: #2e471f !important;
+  color: #507c36 !important;
   background: #e3efdc !important;
 }
  
