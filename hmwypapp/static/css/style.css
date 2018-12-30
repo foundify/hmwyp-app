@@ -500,3 +500,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none !important; 
   margin: 0 !important; 
 }
+.badge .badge-sponsor {
+  transition: background ease 0.5s !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+.badge .badge-sponsor:hover {
+  transition: background ease 0.5s !important;
+  background: #eee !important;
+  color: #000 !important;
+}
