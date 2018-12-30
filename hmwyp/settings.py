@@ -75,6 +75,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hmwyp.wsgi.application'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
