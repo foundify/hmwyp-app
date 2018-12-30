@@ -35,6 +35,7 @@ def nike(request):
 	form2_price_max = Nike.objects.all().aggregate(Max('price')).get('price__max', 'No Data Yet!')
 	form2_price_min = Nike.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
+		initial={'price': request.session.get('price', None)}	
 		form = NikeForm(request.POST)
 		if form.is_valid():
 			form.save()
