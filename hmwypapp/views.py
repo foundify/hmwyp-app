@@ -36,49 +36,64 @@ def nike(request):
 	form2_price_min = Nike.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
 		initial={'price': request.session.get('price', None)}	
-		form = NikeForm(request.POST)
+		form = NikeForm(request.POST, initial=initial)
 		if form.is_valid():
+			request.session['price'] = form.cleaned_data['price']
 			form.save()
 			form = NikeForm()
 	else:
 		form = NikeForm()
-	return render(request, 'hmwypapp/index.html', {'form': form, 'form2_price_min': form2_price_min, 'form2_price_max': form2_price_max, 'form2_price_avg': form2_price_avg})
+
+	user_submit1 = request.session['price']	
+	return render(request, 'hmwypapp/index.html', {'form': form, 'form2_price_min': form2_price_min, 'form2_price_max': form2_price_max, 'form2_price_avg': form2_price_avg, 'user_submit1': user_submit1})
 
 def parking(request):
 	form3_price_avg = Parking.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average Yet!')
 	form3_price_max = Parking.objects.all().aggregate(Max('price')).get('price__max', 'No Data Yet!')
 	form3_price_min = Parking.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
+		initial={'price': request.session.get('price', None)}	
 		form = ParkingForm(request.POST)
 		if form.is_valid():
+			request.session['price'] = form.cleaned_data['price']
 			form.save()
 			form = ParkingForm()
 	else:
 		form = ParkingForm()
-	return render(request, 'hmwypapp/index.html', {'form': form, 'form3_price_min': form3_price_min, 'form3_price_max': form3_price_max, 'form3_price_avg': form3_price_avg})
+
+	user_submit2 = request.session['price']	
+	return render(request, 'hmwypapp/index.html', {'form': form, 'form3_price_min': form3_price_min, 'form3_price_max': form3_price_max, 'form3_price_avg': form3_price_avg, 'user_submit2': user_submit2})
 
 def milk(request):
 	form4_price_avg = Milk.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average Yet!')
 	form4_price_max = Milk.objects.all().aggregate(Max('price')).get('price__max', 'No Data Yet!')
 	form4_price_min = Milk.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
+		initial={'price': request.session.get('price', None)}	
 		form = MilkForm(request.POST)
 		if form.is_valid():
+			request.session['price'] = form.cleaned_data['price']
 			form.save()
 			form = MilkForm()
 	else:
 		form = MilkForm()
-	return render(request, 'hmwypapp/index.html', {'form': form, 'form4_price_min': form4_price_min, 'form4_price_max': form4_price_max, 'form4_price_avg': form4_price_avg})
+
+	user_submit3 = request.session['price']	
+	return render(request, 'hmwypapp/index.html', {'form': form, 'form4_price_min': form4_price_min, 'form4_price_max': form4_price_max, 'form4_price_avg': form4_price_avg, 'user_submit3': user_submit3})
 
 def money(request):
 	form5_price_avg = Money.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average Yet!')
 	form5_price_max = Money.objects.all().aggregate(Max('price')).get('price__max', 'No Data Yet!')
 	form5_price_min = Money.objects.all().aggregate(Min('price')).get('price__min', 'No Data Yet!')
 	if request.method == "POST":
+		initial={'price': request.session.get('price', None)}
 		form = MoneyForm(request.POST)
 		if form.is_valid():
+			request.session['price'] = form.cleaned_data['price']
 			form.save()
 			form = MoneyForm()
 	else:
 		form = MoneyForm()
-	return render(request, 'hmwypapp/index.html', {'form': form, 'form5_price_min': form5_price_min, 'form5_price_max': form5_price_max, 'form5_price_avg': form5_price_avg})
+
+	user_submit4 = request.session['price']	
+	return render(request, 'hmwypapp/index.html', {'form': form, 'form5_price_min': form5_price_min, 'form5_price_max': form5_price_max, 'form5_price_avg': form5_price_avg, 'user_submit4': user_submit4})
