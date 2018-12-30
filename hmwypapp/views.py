@@ -18,14 +18,17 @@ def home(request):
 	min_dollar1 = '$'+str(form1_price_min)
 	max_dollar1 = '$'+str(form1_price_max)
 	if request.method == "POST":
-		form = VintageMacForm(request.POST)
+		initial={'price': request.session.get('price', None)}
+		form = VintageMacForm(request.POST, initial=initial)
 		if form.is_valid():
 			request.session['price'] = form.cleaned_data['price']
 			form.save()
 			form = VintageMacForm()
 	else:
 		form = VintageMacForm()
-	return render(request, 'hmwypapp/index.html', {'form': form, 'min_dollar1': min_dollar1, 'max_dollar1': max_dollar1, 'avg_dollar1': avg_dollar1})
+
+	user_submit = request.session['price']
+	return render(request, 'hmwypapp/index.html', {'form': form, 'min_dollar1': min_dollar1, 'max_dollar1': max_dollar1, 'avg_dollar1': avg_dollar1, 'user_submit': user_submit})
 
 def nike(request):
 	form2_price_avg = Nike.objects.all().aggregate(price=Round(Avg('price'))).get('price', 'No Average Yet!')
